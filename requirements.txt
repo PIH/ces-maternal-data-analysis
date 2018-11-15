@@ -2,3 +2,7 @@ python-dateutil
 ezcsv
 fuzzywuzzy
 python-Levenshtein  # fuzzywuzzy
+unidecode
+
+# Development
+pylint
