@@ -15,7 +15,7 @@ from unidecode import unidecode
 # Constants ############################################################################
 
 INPUT_DIR = Path(".") / "input"
-CENSO_PATH = INPUT_DIR / "SM_Database2_Cleaned.csv"
+CENSO_PATH = INPUT_DIR / "censo.csv"
 PARTOS_PATH = INPUT_DIR / "partos-clean.csv"
 REFS_PATH = INPUT_DIR / "refs-clean.csv"
 COMMUNITIES_PATH = INPUT_DIR / "communities.txt"
@@ -90,7 +90,7 @@ DAYFIRST = "dayfirst"
 
 # Parameters ###########################################################################
 
-DEBUG = True
+DEBUG = False
 INFO = True
 META = {CENSO: {DAYFIRST: True}, PARTOS: {DAYFIRST: True}, REFS: {DAYFIRST: False}}
 NAME_MATCH_THRESHOLD = 90
@@ -311,7 +311,7 @@ def handle_no_censo_name(base_data_line, base_table):
                 base_data_line[PREFIXES[PARTOS] + KEYS[PARTOS][ID]]
             )
         )
-        return {PREFIXES[base_table] + k: v for k, v in base_data_line.items()}
+    return {PREFIXES[base_table] + k: v for k, v in base_data_line.items()}
 
 
 def get_fum_and_other_candidate_deliveries(
